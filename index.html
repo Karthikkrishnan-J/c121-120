@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Real Time Image Identification App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+  <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <center>
+        <div>
+            <h5 style="color: red;">Case Study Between Google Lens And Mobilenet</h5>
+            <img src="lens.png" style="height: 120px;">
+            <h1>V/S</h1>
+            <p class="btn btn-primary">Mobilenet</p>
+        </div>
+        <ol id="reult_item">
+            <div class="test_image_and_result col-xs-12">
+                <li class="col-sm-4 col-xs-12">
+                    <b>Test Image - </b>
+                    <img src="bootle.jpg" class="img img-responsive">
+                </li>
+
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Google Lens</b>
+                    <span id="resultGL">Bootle</span>
+                </h5>
+                
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Mobilenet Modal</b>
+                    <span id="resultMM">Bootle</span>
+                </h5>
+
+                <div class="miniResult" class="col-xs-12">
+                    <h4>Result - </h4>
+                    <hr>
+                    <h4> Both Are Accurate</h4>
+                </div>
+            </div>
+        </ol>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <ol id="reult_item">
+            <div class="test_image_and_result col-xs-12">
+                <li class="col-sm-4 col-xs-12">
+                    <b>Test Image - </b>
+                    <img src="canvas.jpg" class="img img-responsive">
+                </li>
+
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Google Lens</b>
+                    <span id="resultGL">Man</span>
+                </h5>
+                
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Mobilenet Modal</b>
+                    <span id="resultMM">Projector</span>
+                </h5>
+
+                <div class="miniResult" class="col-xs-12">
+                    <h4>Result - </h4>
+                    <hr>
+                    <h4>Both Are Inaccurate</h4>
+                </div>
+            </div>
+        </ol>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <ol id="reult_item">
+            <div class="test_image_and_result col-xs-12">
+                <li class="col-sm-4 col-xs-12">
+                    <b>Test Image - </b>
+                    <img src="flask.jpg" class="img img-responsive">
+                </li>
+
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Google Lens</b>
+                    <span id="resultGL">Flask</span>
+                </h5>
+                
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Mobilenet Modal</b>
+                    <span id="resultMM">Toy</span>
+                </h5>
+
+                <div class="miniResult" class="col-xs-12">
+                    <h4>Result - Google Lens Is More Accurate</h4>
+                    <hr>
+                    <h4></h4>
+                </div>
+            </div>
+        </ol>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <ol id="reult_item">
+            <div class="test_image_and_result col-xs-12">
+                <li class="col-sm-4 col-xs-12">
+                    <b>Test Image - </b>
+                    <img src="gel.jpg" class="img img-responsive">
+                </li>
+
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Google Lens</b>
+                    <span id="resultGL">Gel</span>
+                </h5>
+                
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Mobilenet Modal</b>
+                    <span id="resultMM">Vaccum Cleaner</span>
+                </h5>
+
+                <div class="miniResult" class="col-xs-12">
+                    <h4>Result - </h4>
+                    <hr>
+                    <h4>Google Lens Is More Accurate</h4>
+                </div>
+            </div>
+        </ol>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <ol id="reult_item">
+            <div class="test_image_and_result col-xs-12">
+                <li class="col-sm-4 col-xs-12">
+                    <b>Test Image - </b>
+                    <img src="gulab jamun.jpg" class="img img-responsive">
+                </li>
+
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Google Lens</b>
+                    <span id="resultGL">Gulab Jamun</span>
+                </h5>
+                
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Mobilenet Modal</b>
+                    <span id="resultMM">Backpack</span>
+                </h5>
+
+                <div class="miniResult" class="col-xs-12">
+                    <h4>Result - </h4>
+                    <hr>
+                    <h4>Google Lens Is More Accurate</h4>
+                </div>
+            </div>
+        </ol>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <ol id="reult_item">
+            <div class="test_image_and_result col-xs-12">
+                <li class="col-sm-4 col-xs-12">
+                    <b>Test Image - </b>
+                    <img src="landline.jpg" class="img img-responsive">
+                </li>
+
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Google Lens</b>
+                    <span id="resultGL">Landline</span>
+                </h5>
+                
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Mobilenet Modal</b>
+                    <span id="resultMM">Microphone</span>
+                </h5>
+
+                <div class="miniResult" class="col-xs-12">
+                    <h4>Result - Google Lens Is More Accurate</h4>
+                    <hr>
+                    <h4></h4>
+                </div>
+            </div>
+        </ol>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <ol id="reult_item">
+            <div class="test_image_and_result col-xs-12">
+                <li class="col-sm-4 col-xs-12">
+                    <b>Test Image - </b>
+                    <img src="tesla.jpg" class="img img-responsive">
+                </li>
+
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Google Lens</b>
+                    <span id="resultGL">Tesla</span>
+                </h5>
+                
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Mobilenet Modal</b>
+                    <span id="resultMM">Tesla</span>
+                </h5>
+
+                <div class="miniResult" class="col-xs-12">
+                    <h4>Result - Both Are Accurate</h4>
+                    <hr>
+                    <h4></h4>
+                </div>
+            </div>
+        </ol>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <ol id="reult_item">
+            <div class="test_image_and_result col-xs-12">
+                <li class="col-sm-4 col-xs-12">
+                    <b>Test Image - </b>
+                    <img src="ponds.jpg" class="img img-responsive">
+                </li>
+
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Google Lens</b>
+                    <span id="resultGL">Ponds</span>
+                </h5>
+                
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Mobilenet Modal</b>
+                    <span id="resultMM">Bootle</span>
+                </h5>
+
+                <div class="miniResult" class="col-xs-12">
+                    <h4>Result - </h4>
+                    <hr>
+                    <h4>Google Lens Is More Accurate</h4>
+                </div>
+            </div>
+        </ol>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <ol id="reult_item">
+            <div class="test_image_and_result col-xs-12">
+                <li class="col-sm-4 col-xs-12">
+                    <b>Test Image - </b>
+                    <img src="sketchpen.jpg" class="img img-responsive">
+                </li>
+
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Google Lens</b>
+                    <span id="resultGL">Sketchpen</span>
+                </h5>
+                
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Mobilenet Modal</b>
+                    <span id="resultMM">Chocolate</span>
+                </h5>
+
+                <div class="miniResult" class="col-xs-12">
+                    <h4>Result - </h4>
+                    <hr>
+                    <h4>Google Lens Is More Accurate</h4>
+                </div>
+            </div>
+        </ol>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <ol id="reult_item">
+            <div class="test_image_and_result col-xs-12">
+                <li class="col-sm-4 col-xs-12">
+                    <b>Test Image - </b>
+                    <img src="stapler.jpg" class="img img-responsive">
+                </li>
+
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Google Lens</b>
+                    <span id="resultGL">Stapler</span>
+                </h5>
+                
+                <h5 class="col-sm-4 col-xs-12">
+                    Output On <b>Mobilenet Modal</b>
+                    <span id="resultMM">Vaccum Cleaner</span>
+                </h5>
+
+                <div class="miniResult" class="col-xs-12">
+                    <h4>Result - </h4>
+                    <hr>
+                    <h4>Google Lens Is More Accurate</h4>
+                </div>
+            </div>
+        </ol>
+    </center>
+    <script src="main.js"></script>
+</body>
+</html>
